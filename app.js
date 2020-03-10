@@ -29,9 +29,12 @@ io.on('connection', function(socket) {  // socket id your connection
         console.log(msg); // lets see what the payload is from the client side
 
 
+
         // tell the connection maanger (io) to send this message to everyone
         // anyone connected to our chat app will get this message (including the sender)
-        io.emit('new_message', { id: socket.id, message: msg })
+        // edit socket function if you want sender to not receive message
+        socket.to('new_message', { id: socket.id, message: msg })
+        // io.emit('new_message', { id: socket.id, message: msg })
     })
 
     socket.on('disconnect', function() {

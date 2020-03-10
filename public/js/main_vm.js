@@ -25,7 +25,7 @@ const vm = new Vue({
     data: {
         socketID: "",
         message: "",
-        username: "",
+        username: "weezy",
         messages: []
     },
 
