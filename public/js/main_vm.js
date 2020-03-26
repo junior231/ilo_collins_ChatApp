@@ -26,7 +26,8 @@ const vm = new Vue({
         socketID: "",
         message: "",
         username: "",
-        messages: []
+        messages: [],
+        nickname: ""
     },
 
     methods: {
@@ -39,7 +40,7 @@ const vm = new Vue({
             // if the first value is set, use it. else use whatever comes after the double pipe
             socket.emit('chat_message', {
                 content: this.message,
-                name: this.username || "anonymous"
+                name: this.nickname || "anonymous"
             })
 
             this.message = "";

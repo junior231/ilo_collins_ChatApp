@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<title>Socket IO Chat with Node!</title>
 	<link rel="stylesheet" href="css/main.css">
 	<script src="https://unpkg.com/vue"></script>
 </head>
-
 <body>
 	<main id="app">
 		<section class="form-container">
 			<label for="nickname">Your Nickname (optional)</label>
-			<input type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
+			<input v-model="nickname" type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
 
 			<form>
 				<label for="message">Something to say?</label>
