@@ -33,7 +33,10 @@ $ npm i -s mysql
 
 ## Deployment
 
-Once everything is installed, now in terminal within the project type:
+Once everything is installed, in the terminal window within the project, run this code:
+```
+npm start
+```
 
 ## Built With
 
