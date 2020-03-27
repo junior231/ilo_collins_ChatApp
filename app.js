@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+//made server an object for socket.io because it needs a var to bind to
 const server = app.listen(port, () => {
     console.log(`app is running on port ${port}`);
 });
@@ -32,6 +33,11 @@ io.on('connection', function(socket) {  // socket id your connection
         // tell the connection maanger (io) to send this message to everyone
         // anyone connected to our chat app will get this message (including the sender)
         io.emit('new_message', { id: socket.id, message: msg })
+    })
+
+    socket.on('userJoined', function(user){
+        console.log(user + 'has joined the chat');
+        io.emit('newUser', user);
     })
 
     socket.on('disconnect', function() {
