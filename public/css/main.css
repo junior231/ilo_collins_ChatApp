@@ -19,7 +19,24 @@ main {
   flex-direction: row;
 }
 
-.login {
+.screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 99;
+  background-color: white;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.screen .form-screen {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.screen input {
+  text-align: center;
   display: inline-block;
   width: 100%;
   border: 2px solid #bfcfd6;
@@ -90,9 +107,10 @@ form input[type=submit] {
   background: #eee;
 }
 
-.status {
-  margin: 0 auto;
-  margin: 4rem;
+.hide {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .new-message {
@@ -121,33 +139,18 @@ form input[type=submit] {
   display: flex;
   flex-direction: column;
   z-index: 1;
+  overflow: hidden;
   height: 40%;
   padding: 20px 50px;
   transform: translateX(10px);
   transition: all 0.4s ease;
 }
-.userList h4 {
+.userList h3 {
   font-size: 20px;
 }
 .userList ul {
   display: flex;
   flex-direction: column;
-}
-.userList ul li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 15px;
-}
-.userList ul li p {
-  font-size: 16px;
-}
-.userList ul li .circle {
-  background: #717fff;
-  height: 15px;
-  width: 15px;
-  border-radius: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

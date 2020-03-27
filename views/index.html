@@ -8,21 +8,23 @@
 </head>
 <body>
 
-	<div class="screen">
-		<form action="" class="login">
-			<label for="username">Enter Your UserName</label>
-			<input v-model="nickname" type="text" placeholder="What is your username?">
-			<button @click.prevent="register" type="submit">Submit</button>
 	
-		</form>
-	</div>
 	<main id="app">
 
-		
+		<div class="screen">
+			<div class="form-screen">
+				<form @click.prevent="register" class="login">
+					<label for="username">Enter Your UserName</label>
+					<input id="username" v-model="nickname" type="text" placeholder="What is your username?">
+					<input type="submit" class="loginButton">
+				</form>
+			</div>
+		</div>
 		
 		<section class="form-container">
-			<label for="nickname">Your Nickname (optional)</label>
-			<input v-model="nickname" type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
+			<!-- <label for="nickname">Welcome {{ nickname }}</label>
+			<input v-model="nickname" type="text" id="nickname" class="nickname" placeholder="What is your nickname?"> -->
+			<h2>Welcome {{ nickname }}</h2>
 
 			<form>
 				<label for="message">Something to say?</label>
@@ -31,10 +33,10 @@
 			</form>
 
 			<section class="userList">
-				<button @click.prevent="showUsers">Show Users online</button>
+				<h3>Show User Online</h3>
 				<ul id='players'>
 					<li v-for='user in users'>
-						<div class="circle"></div><p>{{ user.user }}</p>
+						<div class="circle"></div><p>{{ user }}</p>
 					</li>
 				</ul>
 			</section>
