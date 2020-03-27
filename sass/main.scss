@@ -7,6 +7,7 @@ html, body { height: 100%; }
 
 body { font: 16px Helvetica, Arial; }
 
+
 main { 
 	display: flex;
 	height: 100%;
@@ -15,15 +16,15 @@ main {
 .form-container, .messages { padding: 20px; }
 .form-container { 
 	flex: 1; 
-	border: 6px solid #bfcfd6;
-	background-color: #e3edf1;
+	// border: 6px solid #bfcfd6;
+	background-color: #d6ffeb;
 
 	label { display: block; margin-bottom: 0.5rem; }
 }
 
 .messages { 
-	flex: 2;
-	background-color: #eee;
+	flex: 3;
+	background-color: rgb(238, 238, 238);
 	border: 6px solid #e2e0e0; 
 }
 
@@ -50,7 +51,7 @@ form {
 	input[type=submit] { 
 		width: auto; 
 		padding: 10px; 
-		background-color: rgb(75, 200, 17);
+		background-color: rgb(200, 17, 139);
 		margin-top: 1rem; 
 		border-radius: 8px;
 		color: white;
@@ -67,6 +68,12 @@ form {
 	li:nth-child(odd) { background: #eee; }
 }
 
+.status {
+	margin: 0 auto;
+	margin: 4rem;
+}
+
 // imports
 
 @import 'modules/_message';
+@import 'modules/_userList';

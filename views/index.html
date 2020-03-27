@@ -8,6 +8,7 @@
 </head>
 <body>
 	<main id="app">
+		
 		<section class="form-container">
 			<label for="nickname">Your Nickname (optional)</label>
 			<input v-model="nickname" type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
@@ -17,7 +18,19 @@
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input @click.prevent="dispatchMessage" type="submit">
 			</form>
+
+			<section class="userList">
+				<button @click.prevent="showUsers">Show Users online</button>
+				<ul id='players'>
+					<li v-for='user in users'>
+						<div class="circle"></div><p>{{ user.user }}</p>
+					</li>
+				</ul>
+			</section>
+
 		</section>
+
+		
 
 		<section class="messages">
 			<ul id="messages">

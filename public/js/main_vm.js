@@ -17,6 +17,11 @@ function showDisconnectMessage() {
     console.log('a user disconnected');
 }
 
+function appendPlayer(user){
+    
+    vm.players.push(user);
+};
+
 function appendMessage(message) {
     vm.messages.push(message)
 }
@@ -26,6 +31,7 @@ const vm = new Vue({
         socketID: "",
         message: "",
         username: "",
+        users: [],
         messages: [],
         nickname: ""
     },
@@ -44,7 +50,18 @@ const vm = new Vue({
             })
 
             this.message = "";
+        },
+
+        showUsers(){
+            console.log('showing users online');
+
+            socket.emit('userJoined', {
+                users: this.users
+            })
+
+            this.users = "";
         }
+
     },
 
     mounted: function() {
@@ -60,3 +77,4 @@ const vm = new Vue({
 socket.addEventListener('connected', setUserId);
 socket.addEventListener('disconnect', showDisconnectMessage);
 socket.addEventListener('new_message', appendMessage);
+socket.addEventListener('newPlayer', appendPlayer);

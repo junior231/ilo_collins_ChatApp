@@ -33,8 +33,7 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border: 6px solid #bfcfd6;
-  background-color: #e3edf1;
+  background-color: #d6ffeb;
 }
 
 .form-container label {
@@ -43,10 +42,10 @@ main {
 }
 
 .messages {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  background-color: #eee;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  background-color: #eeeeee;
   border: 6px solid #e2e0e0;
 }
 
@@ -72,7 +71,7 @@ form {
 form input[type=submit] {
   width: auto;
   padding: 10px;
-  background-color: #4bc811;
+  background-color: #c8118b;
   margin-top: 1rem;
   border-radius: 8px;
   color: white;
@@ -95,6 +94,11 @@ form input[type=submit] {
   background: #eee;
 }
 
+.status {
+  margin: 0 auto;
+  margin: 4rem;
+}
+
 .new-message {
   width: 45%;
   padding: 8px 12px;
@@ -115,5 +119,64 @@ form input[type=submit] {
   float: right !important;
   background-color: #86bf9d;
   color: white;
+}
+
+.userList {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1;
+  height: 40%;
+  padding: 20px 50px;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.userList h4 {
+  font-size: 20px;
+}
+
+.userList ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.userList ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15px;
+}
+
+.userList ul li p {
+  font-size: 16px;
+}
+
+.userList ul li .circle {
+  background: #717fff;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
 }
 /*# sourceMappingURL=main.css.map */
