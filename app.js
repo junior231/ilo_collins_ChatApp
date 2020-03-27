@@ -41,7 +41,7 @@ io.on('connection', function(socket) {  // socket id your connection
     socket.on('userRegistered', function(user) {
         userList.push(user.username);
 
-        io.emit('updateUserList', {users: userList})
+        io.emit('updateUserList', userList)
     })
 
     socket.on('userJoined', function(user){

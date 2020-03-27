@@ -1,39 +1,29 @@
 .userList{
     margin: 0 auto;
     display: flex;
+    margin-top: 80px;
     flex-direction: column;
     z-index: 1;
-
-    // position: fixed;
-    // float: left;
-    // background: whitesmoke;
-    // top: 50px;
-    // right: 0;
-    height: 40%;
-    padding: 20px 50px;
+    overflow: hidden;
+    // height: 40%;
+    padding: 10px 10px;
     transform: translateX(10px);
     transition: all .4s ease;
-    h4{
-        font-size: 20px;
+    h3{
+        font-size: 22px;
+        padding: 4px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: rgb(112, 96, 250);
     }
     ul{
         display: flex;
         flex-direction: column; 
-        li{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 15px;
-            p{
-                font-size: 16px;
-            }
-            .circle{
-                background: rgb(113, 127, 255);
-                height: 15px;
-                width: 15px;
-                border-radius: 100%;
-            }
+        justify-content: space-evenly;
+
+        p {
+            padding: .2rem;
+            list-style-type: circle;
         }
     }
 }

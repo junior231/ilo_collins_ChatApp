@@ -19,8 +19,8 @@ function showDisconnectMessage() {
 
 function updateUsers(users) {
     
-    this.users = users;
-    debugger;
+    vm.users = users;
+    // debugger;
 }
 
 function appendPlayer(user){
@@ -58,16 +58,6 @@ const vm = new Vue({
             this.message = "";
         },
 
-        showUsers(){
-            console.log('showing users online');
-
-            socket.emit('userJoined', {
-                users: this.users
-            })
-
-            this.users.push(this.nickname);
-        },
-
         register() {
             console.log('registered');
 
@@ -94,3 +84,17 @@ socket.addEventListener('disconnect', showDisconnectMessage);
 socket.addEventListener('new_message', appendMessage);
 socket.addEventListener('userJoined', appendPlayer);
 socket.addEventListener('updateUserList', updateUsers);
+
+// handle login function
+
+const   loginPage     = document.querySelector('.screen'),
+        loginButton   = document.querySelector('.loginButton');
+
+    loginButton.addEventListener('click', function() {
+        if(vm.nickname === ''){
+            alert("You need to input a Username")
+        }else{
+            console.log('New user has joined');
+            loginPage.classList.add('hide');
+        }
+    });
