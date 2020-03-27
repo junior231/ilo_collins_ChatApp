@@ -7,7 +7,18 @@
 	<script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+
+	<div class="screen">
+		<form action="" class="login">
+			<label for="username">Enter Your UserName</label>
+			<input v-model="nickname" type="text" placeholder="What is your username?">
+			<button @click.prevent="register" type="submit">Submit</button>
+	
+		</form>
+	</div>
 	<main id="app">
+
+		
 		
 		<section class="form-container">
 			<label for="nickname">Your Nickname (optional)</label>

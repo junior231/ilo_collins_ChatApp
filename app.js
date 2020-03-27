@@ -20,11 +20,14 @@ const server = app.listen(port, () => {
 
 // attach our chat server to our app
 io.attach(server);
-
+let userList = [];
 
 io.on('connection', function(socket) {  // socket id your connection
     console.log('a user has connected');
-    socket.emit('connected', { sID: socket.id, message: "new connection" });
+    
+
+
+    socket.emit('connected', { sID: socket.id, message: "new connection", users: userList });
 
     socket.on('chat_message', function(msg) {
         console.log(msg); // lets see what the payload is from the client side
@@ -33,6 +36,12 @@ io.on('connection', function(socket) {  // socket id your connection
         // tell the connection maanger (io) to send this message to everyone
         // anyone connected to our chat app will get this message (including the sender)
         io.emit('new_message', { id: socket.id, message: msg })
+    })
+
+    socket.on('userRegistered', function(user) {
+        userList.push(user.username);
+
+        io.emit('updateUserList', {users: userList})
     })
 
     socket.on('userJoined', function(user){
