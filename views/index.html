@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Socket IO Chat with Node!</title>
 	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto&display=swap" rel="stylesheet">
 	<script src="https://unpkg.com/vue"></script>
 </head>
 <body>
@@ -12,6 +13,8 @@
 	<main id="app">
 
 		<div class="screen">
+			<h2>Super Duper ChatApp</h2>
+			<p>Get Started on the ChatApp and have fun with your friends</p>
 			<div class="form-screen">
 				<form @click.prevent="register" class="login">
 					<label for="username">Enter Your UserName</label>
@@ -22,19 +25,16 @@
 		</div>
 		
 		<section class="form-container">
-			<!-- <label for="nickname">Welcome {{ nickname }}</label>
-			<input v-model="nickname" type="text" id="nickname" class="nickname" placeholder="What is your nickname?"> -->
 			<h2>Welcome {{ nickname }}</h2>
-
 			<form>
-				<label for="message">Something to say?</label>
+				<label for="message">Get Chatting</label>
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea"></textarea>
 				<input @click.prevent="dispatchMessage" type="submit">
 			</form>
 
 			<section class="userList">
-				<h3>Show User Online</h3>
-				<ul id='players'>
+				<h3>Show Users Online</h3>
+				<ul id='users'>
 					<li v-for='user in users'>
 						<div class="circle"></div><p>{{ user }}</p>
 					</li>
